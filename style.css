@@ -1,0 +1,485 @@
+/* CSS by Cleveland Williams */
+/* Imported Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wdth,wght@0,18..144,87..112,300..900;1,18..144,87..112,300..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+/* CSS Reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Root Variables */
+:root {
+  --blue-bulletin: #1d3557;
+  --news-flash: #e63946;
+  --watchdog-white: #f1faee;
+  --truth-text: #333;
+  --story-subtitle: #457b9d;
+  --font-body: "Source Sans 3", sans-serif;
+  --font-heading: "Merriweather", serif;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  --transition: all 0.5s ease;
+}
+
+@font-face {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+/* Manual Light/Dark Mode Styles*/
+body.light-mode {
+  background-color: var(--watchdog-white);
+  color: var(--truth-text);
+}
+
+body.dark-mode {
+  background-color: var(--truth-text);
+  color: var(--watchdog-white);
+}
+
+#theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--watchdog-white);
+  border: 1px solid var(--blue-bulletin);
+  border-radius: 1.5rem;
+  cursor: pointer;
+}
+
+/* Skip Link Styles */
+#skip {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+#skip:focus {
+  position: static;
+  width: auto;
+  height: auto;
+}
+
+/* ///ADD/// Navigation Styles */
+header {
+  background-color: var(--blue-bulletin);
+  color: var(--watchdog-white);
+  padding: 5vw 4vw 4vw 4vw;
+  margin-bottom: 5vw;
+}
+
+nav {
+  background-color: var(--news-flash);
+  color: var(--watchdog-white);
+  text-align: center;
+  padding: 1vw 0;
+}
+nav .menu {
+  display: none;
+}
+nav label {
+  text-transform: uppercase;
+}
+
+/* ///ADD/// Global Layout Styles */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5vw;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5vw;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1.5vw;
+}
+
+p {
+  margin-bottom: 1.5vw;
+  line-height: 1.1;
+}
+
+main {
+  padding: 4vw;
+}
+main blockquote {
+  text-align: right;
+  font-weight: bold;
+  margin-top: 2vw;
+}
+main section {
+  margin-bottom: 5vw;
+}
+main #videos section {
+  background-color: var(--news-flash);
+  padding: 3vw;
+  margin: 3vw 1.5vw 3vw 1.5vw;
+  display: grid;
+  justify-items: center;
+  box-shadow: 0 0 5px 3px rgba(22, 22, 22, 0.7);
+}
+main #videos section p,
+main #videos section h3 {
+  justify-content: left;
+  line-height: 1.1;
+}
+main #videos section video {
+  width: 100%;
+  height: 100%;
+}
+main #videos section h3 {
+  border-bottom: 1px solid var(--watchdog-white);
+}
+main #articles section {
+  border: 1px solid var(--story-subtitle);
+  padding: 3vw;
+  margin: 3vw 1.5vw;
+  display: grid;
+  justify-items: center;
+  box-shadow: 0 0 5px 3px rgba(22, 22, 22, 0.7);
+}
+main #articles section p,
+main #articles section h3 {
+  justify-content: left;
+}
+main #articles section video {
+  width: 100%;
+}
+main #articles section h3 {
+  border-bottom: 1px solid var(--story-subtitle);
+}
+main #form form {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: var(--news-flash);
+  padding: 3vw;
+  margin: 3vw;
+  box-shadow: 0 0 5px 3px rgba(22, 22, 22, 0.7);
+}
+main #form label {
+  margin-bottom: 1vw;
+}
+main #form input {
+  padding-bottom: 3vw;
+  margin-bottom: 3vw;
+}
+main #form legend {
+  text-transform: uppercase;
+}
+main #form fieldset {
+  border: solid 1px var(--blue-bulletin);
+  display: grid;
+  grid-template-columns: 1fr 11fr;
+  justify-items: left;
+  margin-bottom: 3vw;
+  padding: 1vw;
+}
+main #form input[type=submit] {
+  background-color: var(--blue-bulletin);
+  padding-top: 3vw;
+  color: var(--watchdog-white);
+  text-transform: uppercase;
+}
+
+footer {
+  background-color: var(--blue-bulletin);
+  padding: 5vw 4vw 4vw 4vw;
+  text-align: center;
+}
+footer a {
+  background-color: var(--news-flash);
+  text-decoration: none;
+  color: var(--watchdog-white);
+  padding: 3vw;
+}
+footer h2 {
+  margin-bottom: 3vw;
+  text-align: left;
+}
+footer ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  text-align: left;
+  margin-bottom: 4vw;
+}
+footer ul li {
+  margin-bottom: 6vw;
+  margin-top: 3vw;
+}
+
+/* ///ADD/// Global Text Styles */
+header p {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+}
+
+main #intro p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+main #videos p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+main #articles p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+main #form fieldset label {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+}
+main #form input[type=submit] {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+footer ul {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+footer small {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+/* ///ADD/// medium styles 620px */
+@media screen and (min-width: 620px) {
+  header nav {
+    background-color: var(--blue-bulletin);
+  }
+  header nav .menu {
+    display: block;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 85%;
+  }
+  header nav .menu li {
+    background-color: var(--news-flash);
+    width: 75%;
+    padding: 1vw;
+    height: 70%;
+  }
+  header nav .menu li a {
+    color: var(--watchdog-white);
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.7rem;
+  }
+  header nav .menu-button {
+    display: none;
+  }
+  main #intro p {
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 200;
+  }
+  main #intro blockquote {
+    text-align: center;
+  }
+  main #videos div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  main #videos div p {
+    margin-bottom: 1vw;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 0.8rem;
+  }
+  main #videos div section {
+    margin-bottom: 1.5vw;
+  }
+  main #articles div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  main #articles p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 0.8rem;
+  }
+  main #form form #textboxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  main #form form fieldset {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  footer ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+/* ///ADD/// large styles 920px */
+/* ///ADD/// x-large styles 1024px */
+/* ///ADD/// Interaction Queries for color scheme light and dark and motion preference */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--truth-text);
+    color: var(--watchdog-white);
+  }
+}
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: var(--watchdog-white);
+    color: var(--truth-text);
+  }
+}
+body.dark-mode {
+  background-color: var(--truth-text);
+  color: var(--watchdog-white);
+}
+
+body.light-mode {
+  background-color: var(--watchdog-white);
+  color: var(--truth-text);
+}
+
+/* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked *//*# sourceMappingURL=style.css.map */
